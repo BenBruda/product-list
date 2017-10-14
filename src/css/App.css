@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+  background: #eaedf2;
+}
+
+
+.header {
+  background-color: #2B2F31;
+  height: 50px;
+  padding: 20px;
+  color: #20bba6;
+}
+
+
+
+.card-list {
+ display:flex;
+ color:#2B2F31;
+
+}
+.card {
+  background: white;
+  margin: 30px;
+  width:300px;
+  height:400px;
+  
+}
+.img-wrap {
+  overflow: hidden;
+  max-height:300px;
+}
+.img-inner {
+  display: inline-block;
+  position: relative;
+  right: -50%;
+  }
+img {
+  min-width:300px;
+  min-height:300px;
+  max-height: 300px;
+  position: relative;
+  left: -50%;
+}
