@@ -12,22 +12,28 @@
 }
 
 
-
 .card-list {
- display:flex;
  color:#2B2F31;
+ display: inline;
+}
+.cardWraper{
+  width:20%;
+  float:left;
+  margin: 30px;
 
+}
+.cardWraper:before {
+  padding-top: 16.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
 }
 .card {
   background: white;
-  margin: 30px;
-  width:300px;
-  height:400px;
-  
 }
+
 .img-wrap {
   overflow: hidden;
-  max-height:300px;
 }
 .img-inner {
   display: inline-block;
@@ -35,9 +41,7 @@
   right: -50%;
   }
 img {
-  min-width:300px;
-  min-height:300px;
-  max-height: 300px;
+  width:100%;
   position: relative;
   left: -50%;
 }

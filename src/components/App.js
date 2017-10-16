@@ -33,6 +33,36 @@ class App extends React.Component<Props, State> {
           id: 4,
           name: 'product 2',
           description: 'the description of the first object'
+        },
+        {
+          id: 5,
+          name: 'product 1',
+          description: 'the description of the first object'
+        },
+        {
+          id: 6,
+          name: 'product 2',
+          description: 'the description of the first object'
+        },
+        {
+          id: 7,
+          name: 'product 2',
+          description: 'the description of the first object'
+        },
+        {
+          id: 8,
+          name: 'product 1',
+          description: 'the description of the first object'
+        },
+        {
+          id: 9,
+          name: 'product 2',
+          description: 'the description of the first object'
+        },
+        {
+          id: 10,
+          name: 'product 2',
+          description: 'the description of the first object'
         }
       ]
     };
