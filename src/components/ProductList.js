@@ -1,18 +1,22 @@
 // @flow
 import * as React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { removeProduct } from './actions';
 type Props = {
-  products: Array<{ id: number, name: string, description: string }>
+  products: Array<{ id: number, name: string, description: string }>,
+  actions: any
 };
 
-class App extends React.Component<Props> {
+class ProductList extends React.Component<Props> {
   render() {
     return (
       <div className="card-list">
-        {this.props.products.map(product => {
+        {this.props.products.map((product, index) => {
           return (
-            <div className="cardWraper">
-              <div className="card" key={product.id}>
+            <div className="cardWraper" key={index}>
+              <div className="card">
                 <div className="img-wrap">
                   <div className="img-inner">
                     <img
@@ -21,6 +25,9 @@ class App extends React.Component<Props> {
                     />
                   </div>
                 </div>
+                <h2 onClick={() => this.props.actions.removeProduct(index)}>
+                  delete
+                </h2>
                 <h3>{product.name} </h3>
                 <span>{product.description} </span>
               </div>
@@ -32,4 +39,12 @@ class App extends React.Component<Props> {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return { products: state.products };
+}
+
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators({ removeProduct }, dispatch) };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
