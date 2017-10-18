@@ -1,4 +1,6 @@
-import { ADD_NEW_PRODUCT, REMOVE_PRODUCT } from './actions.js';
+// @flow
+import { ADD_PRODUCT, REMOVE_PRODUCT } from './actions.js';
+import type { State, Action } from './types';
 
 function initState() {
   return {
@@ -57,9 +59,9 @@ function initState() {
   };
 }
 
-function rootReducer(state = initState(), action) {
+function rootReducer(state: State = initState(), action: Action): State {
   switch (action.type) {
-    case ADD_NEW_PRODUCT:
+    case ADD_PRODUCT:
       return {
         ...state,
         products: [...state.products, action.product]

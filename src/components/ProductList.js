@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { removeProduct } from './actions';
+
+import type { State, Product } from './types';
 type Props = {
-  products: Array<{ id: number, name: string, description: string }>,
-  actions: any
+  products: Array<Product>,
+  actions: { removeProduct: (index: number) => void }
 };
 
 class ProductList extends React.Component<Props> {
@@ -39,7 +41,7 @@ class ProductList extends React.Component<Props> {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: State): { products: Array<Product> } {
   return { products: state.products };
 }
 
