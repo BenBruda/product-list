@@ -47,11 +47,10 @@ class App extends React.Component<Props, State> {
     const { products, actions, nextId } = this.props;
     return (
       <div className="App">
-        <Header onSearch={this.props.actions.search} />
-        <div onClick={() => this.setState({ showModal: true })}>
-          {' '}
-          add new product +{' '}
-        </div>
+        <Header
+          onSearch={this.props.actions.search}
+          onAdd={() => this.setState({ showModal: true })}
+        />
         <ProductList
           products={products}
           removeProduct={actions.removeProduct}

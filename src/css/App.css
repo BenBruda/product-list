@@ -3,13 +3,10 @@
   background: #eaedf2;
 }
 
-
 .header {
   background-color: #2B2F31;
-  height: 30px;
   padding: 30px;
 }
-
 
 .card-list {
  color:#2B2F31;
@@ -140,7 +137,7 @@
   background: #eaedf2;
   height: 35px;
   padding-left:40px;
-  width:50%; 
+  width:40%; 
   border:none;
   margin:none;
   outline: none;
@@ -158,4 +155,17 @@
   padding:5px;
   /* position: absolute; */
   left: 0
+}
+.addIcon {
+  width: 20px;
+  padding:0 5px
+}
+.addProduct {
+ position: relative;
+ display: inline;
+ margin-left:30px;
+ font-size:26px;
+ color: #20bba6;
+ border: 2px solid;
+ padding: 5px;
 }
