@@ -9,7 +9,7 @@ export type AddProductAction = {
   product: Product
 };
 
-export type State = {
+export type StoreState = {
   +products: Array<{
     +id: number,
     +name: string,
