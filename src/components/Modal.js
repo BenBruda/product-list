@@ -6,14 +6,13 @@ import type { Product } from './types';
 type Props = {
   onClose: Function,
   onSave: Function,
-  nextId: number,
   selectedProduct: Product
 };
 type State = {
   name: string,
   description: string,
   url: string,
-  id: number
+  id: ?number
 };
 
 class Modal extends React.Component<Props, State> {
@@ -25,7 +24,7 @@ class Modal extends React.Component<Props, State> {
         ? props.selectedProduct.description
         : '',
       url: props.selectedProduct.url ? props.selectedProduct.url : '',
-      id: props.selectedProduct.id ? props.selectedProduct.id : props.nextId
+      id: props.selectedProduct.id && props.selectedProduct.id
     };
   }
   onSave = () => {

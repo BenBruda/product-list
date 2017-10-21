@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import '../css/App.css';
 
 import { removeProduct, addProduct, search, updateProduct } from './actions';
-import { getSearchedProducts, getNextID } from './reducer';
+import { getSearchedProducts } from './reducer';
 import type { StoreState, Product } from './types';
 
 import ProductList from './ProductList';
@@ -72,7 +72,7 @@ class App extends React.Component<Props, State> {
 }
 
 function mapStateToProps(state: StoreState): { products: Array<Product> } {
-  return { products: getSearchedProducts(state), nextId: getNextID(state) };
+  return { products: getSearchedProducts(state) };
 }
 
 function mapDispatchToProps(dispatch) {

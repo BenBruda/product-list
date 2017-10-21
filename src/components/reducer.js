@@ -71,7 +71,8 @@ function initState() {
         url: 'https://c1.staticflickr.com/6/5281/5312627175_07aeca58ea_b.jpg'
       }
     ],
-    searchText: ''
+    searchText: '',
+    nextId: 11
   };
 }
 
@@ -83,7 +84,8 @@ function rootReducer(
     case ADD_PRODUCT:
       return {
         ...state,
-        products: [...state.products, action.product]
+        products: [...state.products, { ...action.product, id: state.nextId }],
+        nextId: state.nextId + 1
       };
     case REMOVE_PRODUCT:
       return {
@@ -121,9 +123,6 @@ export const getSearchedProducts = (state: StoreState): Array<Product> => {
   }
 
   return searchedProducts;
-};
-export const getNextID = (state: StoreState): number => {
-  return state.products.length + 1;
 };
 
 export default rootReducer;
