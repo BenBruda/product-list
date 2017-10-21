@@ -3,11 +3,13 @@ import type {
   Product,
   RemoveProductAction,
   AddProductAction,
-  SearchProductAction
+  SearchProductAction,
+  UpdateProductAction
 } from './types';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const SEARCH_PRODUCT = 'SEARCH_PRODUCT';
+export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 
 function addProduct(product: Product): AddProductAction {
   return {
@@ -28,4 +30,11 @@ function search(text: string): SearchProductAction {
   };
 }
 
-export { addProduct, removeProduct, search };
+function updateProduct(product: Product): UpdateProductAction {
+  return {
+    type: UPDATE_PRODUCT,
+    product
+  };
+}
+
+export { addProduct, removeProduct, search, updateProduct };

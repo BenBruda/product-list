@@ -1,5 +1,10 @@
 // @flow
-import { ADD_PRODUCT, REMOVE_PRODUCT, SEARCH_PRODUCT } from './actions.js';
+import {
+  ADD_PRODUCT,
+  REMOVE_PRODUCT,
+  SEARCH_PRODUCT,
+  UPDATE_PRODUCT
+} from './actions.js';
 import type { StoreState, Action, Product } from './types';
 
 function initState() {
@@ -90,6 +95,14 @@ function rootReducer(
         ...state,
         searchText: action.text
       };
+    case UPDATE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.map(
+          product =>
+            product.id === action.product.id ? action.product : product
+        )
+      };
     default:
       return state;
   }
@@ -108,6 +121,9 @@ export const getSearchedProducts = (state: StoreState): Array<Product> => {
   }
 
   return searchedProducts;
+};
+export const getNextID = (state: StoreState): number => {
+  return state.products.length + 1;
 };
 
 export default rootReducer;

@@ -5,23 +5,39 @@ import type { Product } from './types';
 
 type Props = {
   products: Array<Product>,
-  removeProduct: Function
+  removeProduct: Function,
+  selectProduct: Function
 };
 
 class ProductList extends React.Component<Props> {
   render() {
+    const { selectProduct, removeProduct } = this.props;
     return (
       <div className="card-list">
         {this.props.products.map((product, index) => {
           return (
-            <div className="cardWraper" key={index}>
+            <div
+              onClick={() => selectProduct(product)}
+              className="cardWraper"
+              key={index}
+            >
               <div className="card">
                 <div className="img-wrap">
                   <div className="img-inner">
-                    <img  src={product.url} alt="" />
+                    <img src={product.url} alt="" />
                   </div>
                 </div>
-                <h2 onClick={() => this.props.removeProduct(index)}>delete</h2>
+                <div className="deleteButton">
+                  <img
+                    className="imgDeleteButton"
+                    onClick={e => {
+                      e.stopPropagation();
+                      removeProduct(product.id);
+                    }}
+                    src={require('../imgs/recycle-bin.svg')}
+                    alt="X"
+                  />
+                </div>
                 <h3>{product.name} </h3>
                 <span>{product.description} </span>
               </div>

@@ -1,31 +1,36 @@
 // @flow
 import * as React from 'react';
 
-// import type { Product } from './types';
+import type { Product } from './types';
 
 type Props = {
-  //   product: Product,
   onClose: Function,
-  onSave: Function
+  onSave: Function,
+  nextId: number,
+  selectedProduct: Product
 };
 type State = {
   name: string,
   description: string,
-  url: string
+  url: string,
+  id: number
 };
 
 class Modal extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      name: '',
-      description: '',
-      url: ''
+      name: props.selectedProduct.name ? props.selectedProduct.name : '',
+      description: props.selectedProduct.description
+        ? props.selectedProduct.description
+        : '',
+      url: props.selectedProduct.url ? props.selectedProduct.url : '',
+      id: props.selectedProduct.id ? props.selectedProduct.id : props.nextId
     };
   }
   onSave = () => {
-    const { name, description, url } = this.state;
-    this.props.onSave({ name, description, url });
+    const { name, description, url, id } = this.state;
+    this.props.onSave({ name, description, url, id });
     this.props.onClose();
   };
 
