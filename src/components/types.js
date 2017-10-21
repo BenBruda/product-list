@@ -8,6 +8,10 @@ export type AddProductAction = {
   type: 'ADD_PRODUCT',
   product: Product
 };
+export type SearchProductAction = {
+  type: 'ADD_PRODUCT',
+  text: string
+};
 
 export type StoreState = {
   +products: Array<{
@@ -17,6 +21,6 @@ export type StoreState = {
   }>
 };
 
-export type RemoveProductAction = { type: 'REMOVE_PRODUCT', index: number };
+export type RemoveProductAction = { type: 'REMOVE_PRODUCT', id: number };
 
 export type Action = AddProductAction | RemoveProductAction;

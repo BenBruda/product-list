@@ -4,18 +4,20 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../css/App.css';
 
-import { removeProduct, addProduct } from './actions';
-
+import { removeProduct, addProduct, search } from './actions';
+import { getSearchedProducts } from './reducer';
 import type { StoreState, Product } from './types';
 
 import ProductList from './ProductList';
 import Modal from './Modal';
+import Header from './Header';
 
 type Props = {
   products: Array<Product>,
   actions: {
     removeProduct: (index: number) => void,
-    addProduct: (index: number) => void
+    addProduct: (product: Product) => void,
+    search: (text: string) => void
   }
 };
 type State = {
@@ -25,7 +27,7 @@ class App extends React.Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: true
+      showModal: false
     };
   }
   onSave = (product: Product) => {
@@ -35,7 +37,7 @@ class App extends React.Component<Props, State> {
     const { showModal } = this.state;
     return (
       <div className="App">
-        <div className="header" />
+        <Header onSearch={this.props.actions.search} />
         <div onClick={() => this.setState({ showModal: true })}>
           {' '}
           add new product +{' '}
@@ -56,12 +58,12 @@ class App extends React.Component<Props, State> {
 }
 
 function mapStateToProps(state: StoreState): { products: Array<Product> } {
-  return { products: state.products };
+  return { products: getSearchedProducts(state), nextId: getNextID(state) };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ removeProduct, addProduct }, dispatch)
+    actions: bindActionCreators({ removeProduct, addProduct, search }, dispatch)
   };
 }
 

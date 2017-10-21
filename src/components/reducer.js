@@ -1,6 +1,6 @@
 // @flow
-import { ADD_PRODUCT, REMOVE_PRODUCT } from './actions.js';
-import type { StoreState, Action } from './types';
+import { ADD_PRODUCT, REMOVE_PRODUCT, SEARCH_PRODUCT } from './actions.js';
+import type { StoreState, Action, Product } from './types';
 
 function initState() {
   return {
@@ -65,7 +65,8 @@ function initState() {
         description: 'the description of the first object',
         url: 'https://c1.staticflickr.com/6/5281/5312627175_07aeca58ea_b.jpg'
       }
-    ]
+    ],
+    searchText: ''
   };
 }
 
@@ -82,14 +83,31 @@ function rootReducer(
     case REMOVE_PRODUCT:
       return {
         ...state,
-        products: [
-          ...state.products.slice(0, action.index),
-          ...state.products.slice(action.index + 1)
-        ]
+        products: state.products.filter(product => product.id !== action.id)
+      };
+    case SEARCH_PRODUCT:
+      return {
+        ...state,
+        searchText: action.text
       };
     default:
       return state;
   }
 }
+
+export const getSearchedProducts = (state: StoreState): Array<Product> => {
+  const { products, searchText } = state;
+  let searchedProducts;
+  if (searchText !== '') {
+    searchedProducts = products.filter(product => {
+      const { name, description } = product;
+      return description.includes(searchText) || name.includes(searchText);
+    });
+  } else {
+    searchedProducts = products;
+  }
+
+  return searchedProducts;
+};
 
 export default rootReducer;

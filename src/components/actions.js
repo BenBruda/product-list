@@ -1,7 +1,13 @@
 // @flow
-import type { Product, RemoveProductAction, AddProductAction } from './types';
+import type {
+  Product,
+  RemoveProductAction,
+  AddProductAction,
+  SearchProductAction
+} from './types';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
+export const SEARCH_PRODUCT = 'SEARCH_PRODUCT';
 
 function addProduct(product: Product): AddProductAction {
   return {
@@ -9,11 +15,17 @@ function addProduct(product: Product): AddProductAction {
     product
   };
 }
-function removeProduct(index: number): RemoveProductAction {
+function removeProduct(id: number): RemoveProductAction {
   return {
     type: REMOVE_PRODUCT,
-    index
+    id
+  };
+}
+function search(text: string): SearchProductAction {
+  return {
+    type: SEARCH_PRODUCT,
+    text
   };
 }
 
-export { addProduct, removeProduct };
+export { addProduct, removeProduct, search };

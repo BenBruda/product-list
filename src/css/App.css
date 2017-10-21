@@ -6,9 +6,8 @@
 
 .header {
   background-color: #2B2F31;
-  height: 50px;
-  padding: 20px;
-  color: #20bba6;
+  height: 30px;
+  padding: 30px;
 }
 
 
@@ -30,6 +29,8 @@
 }
 .card {
   background: white;
+  position: relative;
+  
 }
 
 .img-wrap {
@@ -112,4 +113,49 @@
 }
 .saveButton {
  float: right;
+}
+.imgDeleteButton{
+
+  width: 100%!important;
+
+}
+.deleteButton:hover{
+  background: hsla(0, 96%, 48%, 0.58);
+}
+.deleteButton{
+  position: absolute!important;
+  width: 30px!important;
+  height: 30px!important;
+  background: hsla(0, 0%, 0%, 0.58);
+  padding: 10px;
+  top: 0;
+  right:0
+}
+.searchWrap{
+  background: #eaedf2;
+  position: relative;
+  display: inline;
+}
+.search {
+  background: #eaedf2;
+  height: 35px;
+  padding-left:40px;
+  width:50%; 
+  border:none;
+  margin:none;
+  outline: none;
+  color: #6f7071;
+  font-size: 26px
+}
+.search:focus{
+  outline: none;
+  background: #ffffff;
+  color: #20bba6;
+}
+.searchIcon {
+  width: 27px;
+  position: absolute;
+  padding:5px;
+  /* position: absolute; */
+  left: 0
 }
