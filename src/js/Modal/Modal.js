@@ -1,35 +1,43 @@
 // @flow
 import * as React from 'react';
 
-import type { Product } from './types';
+import type { Product } from '../types';
 
 type Props = {
   onClose: Function,
-  onSave: Function,
+  addProduct: Function,
+  updateProduct: Function,
   selectedProduct: Product
 };
 type State = {
   name: string,
   description: string,
-  url: string,
-  id: ?number
+  url: string
 };
 
 class Modal extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
+    const { name, description, url } = props.selectedProduct;
     this.state = {
-      name: props.selectedProduct.name ? props.selectedProduct.name : '',
-      description: props.selectedProduct.description
-        ? props.selectedProduct.description
-        : '',
-      url: props.selectedProduct.url ? props.selectedProduct.url : '',
-      id: props.selectedProduct.id && props.selectedProduct.id
+      name: name ? name : '',
+      description: description ? description : '',
+      url: url ? url : ''
     };
   }
   onSave = () => {
-    const { name, description, url, id } = this.state;
-    this.props.onSave({ name, description, url, id });
+    const { name, description, url } = this.state;
+    const { selectedProduct, addProduct, updateProduct } = this.props;
+    if (selectedProduct.id) {
+      addProduct({ name, description, url });
+    } else {
+      updateProduct({
+        name,
+        description,
+        url,
+        id: selectedProduct.id
+      });
+    }
     this.props.onClose();
   };
 
@@ -41,7 +49,7 @@ class Modal extends React.Component<Props, State> {
           <div onClick={onClose} className="closeButton">
             <img
               className="imgCloseButton"
-              src={require('../imgs/cancel-music.svg')}
+              src={require('../../imgs/cancel-music.svg')}
               alt="X"
             />
           </div>
@@ -76,7 +84,7 @@ class Modal extends React.Component<Props, State> {
             <div className="saveButton" onClick={this.onSave}>
               <img
                 className="imgSaveButton"
-                src={require('../imgs/checked.svg')}
+                src={require('../../imgs/checked.svg')}
                 alt="ok"
               />
             </div>

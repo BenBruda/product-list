@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 
-import type { Product } from './types';
+import type { Product } from '../types';
 
 type Props = {
   products: Array<Product>,
@@ -34,7 +34,7 @@ class ProductList extends React.Component<Props> {
                       e.stopPropagation();
                       removeProduct(product.id);
                     }}
-                    src={require('../imgs/recycle-bin.svg')}
+                    src={require('../../imgs/recycle-bin.svg')}
                     alt="X"
                   />
                 </div>

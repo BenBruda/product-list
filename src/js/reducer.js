@@ -1,10 +1,8 @@
 // @flow
-import {
-  ADD_PRODUCT,
-  REMOVE_PRODUCT,
-  SEARCH_PRODUCT,
-  UPDATE_PRODUCT
-} from './actions.js';
+import { REMOVE_PRODUCT } from './ProductList/actions.js';
+import { SEARCH_PRODUCT } from './Header/actions.js';
+import { ADD_PRODUCT, UPDATE_PRODUCT } from './Modal/actions.js';
+
 import type { StoreState, Action, Product } from './types';
 
 function initState() {
