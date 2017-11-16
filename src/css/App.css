@@ -43,6 +43,9 @@
   position: relative;
   left: -50%;
 }
+.desc-wrap {
+padding: 10px;
+}
 .modal {
     padding: 0;
     border-radius: 5px;
@@ -58,7 +61,7 @@
     margin-right: auto;
     margin-left: auto;
 }
-.modalWrap {
+.modal-wrap {
    display: block!important;
     position: fixed;
     top: 0;
@@ -70,18 +73,18 @@
     background-color: hsla(0, 0%, 4%, .45);
     overflow-y: scroll;
 }
-.closeButton {
+.close-button {
   border: 0;
   background: transparent;
   margin: 10px -40px 0 0;
   float: right;
   color: white;
 }
-.modalContent{
+.modal-content{
   padding:40px;
   min-height: 330px;
 }
-.modalFooter{
+.modal-footer{
   padding:0 40px;
 }
 .description {
@@ -102,24 +105,22 @@
   padding: 5px;
   float:left
 }
-.imgCloseButton {
+.img-close-button {
   width:20px;
 }
-.imgSaveButton {
+.img-save-button {
   width:45px;
 }
-.saveButton {
+.save-button {
  float: right;
 }
-.imgDeleteButton{
-
+.img-delete-button {
   width: 100%!important;
-
 }
-.deleteButton:hover{
+.delete-button:hover{
   background: hsla(0, 96%, 48%, 0.58);
 }
-.deleteButton{
+.delete-button{
   position: absolute!important;
   width: 30px!important;
   height: 30px!important;
@@ -128,7 +129,7 @@
   top: 0;
   right:0
 }
-.searchWrap{
+.search-wrap{
   background: #eaedf2;
   position: relative;
   display: inline;
@@ -149,18 +150,18 @@
   background: #ffffff;
   color: #20bba6;
 }
-.searchIcon {
+.search-icon {
   width: 27px;
   position: absolute;
   padding:5px;
   /* position: absolute; */
   left: 0
 }
-.addIcon {
+.add-icon {
   width: 20px;
   padding:0 5px
 }
-.addProduct {
+.add-product {
  position: relative;
  display: inline;
  margin-left:30px;

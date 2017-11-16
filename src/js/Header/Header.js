@@ -11,17 +11,17 @@ class Header extends React.Component<Props> {
     const { onAdd, search } = this.props;
     return (
       <div className="header">
-        <div className="searchWrap">
+        <div className="search-wrap">
           <img
-            className="searchIcon"
+            className="search-icon"
             src={require('../../imgs/musica-searcher.svg')}
             alt="X"
           />
           <input onChange={e => search(e.target.value)} className="search" />
         </div>
-        <div onClick={onAdd} className="addProduct">
+        <div onClick={onAdd} className="add-product">
           <img
-            className="addIcon"
+            className="add-icon"
             src={require('../../imgs/add.svg')}
             alt="X"
           />

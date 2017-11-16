@@ -44,16 +44,16 @@ class Modal extends React.Component<Props, State> {
   render() {
     const { onClose } = this.props;
     return (
-      <div className="modalWrap">
+      <div className="modal-wrap">
         <div className="modal">
-          <div onClick={onClose} className="closeButton">
+          <div onClick={onClose} className="close-button">
             <img
-              className="imgCloseButton"
+              className="img-close-button"
               src={require('../../imgs/cancel-music.svg')}
               alt="X"
             />
           </div>
-          <div className="modalContent">
+          <div className="modal-content">
             <div className="fildset">
               <input
                 type="text"
@@ -80,10 +80,10 @@ class Modal extends React.Component<Props, State> {
               />
             </div>
           </div>
-          <div className="modalFooter">
-            <div className="saveButton" onClick={this.onSave}>
+          <div className="modal-footer">
+            <div className="save-button" onClick={this.onSave}>
               <img
-                className="imgSaveButton"
+                className="img-save-button"
                 src={require('../../imgs/checked.svg')}
                 alt="ok"
               />

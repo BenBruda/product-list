@@ -27,9 +27,9 @@ class ProductList extends React.Component<Props> {
                     <img src={product.url} alt="" />
                   </div>
                 </div>
-                <div className="deleteButton">
+                <div className="delete-button">
                   <img
-                    className="imgDeleteButton"
+                    className="img-delete-button"
                     onClick={e => {
                       e.stopPropagation();
                       removeProduct(product.id);
@@ -38,8 +38,10 @@ class ProductList extends React.Component<Props> {
                     alt="X"
                   />
                 </div>
-                <h3>{product.name} </h3>
-                <span>{product.description} </span>
+                <div className="desc-wrap">
+                  <h3>{product.name} </h3>
+                  <span>{product.description} </span>
+                </div>
               </div>
             </div>
           );
