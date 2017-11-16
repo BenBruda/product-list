@@ -32,7 +32,6 @@ class App extends React.Component<Props, State> {
   }
   render() {
     const { showModal, selectedProduct } = this.state;
-    const { nextId } = this.props;
     return (
       <div className="App">
         <Header onAdd={() => this.setState({ showModal: true })} />
@@ -44,7 +43,6 @@ class App extends React.Component<Props, State> {
           <Modal
             onClose={() =>
               this.setState({ showModal: false, selectedProduct: {} })}
-            nextId={nextId}
             selectedProduct={selectedProduct}
           />
         )}

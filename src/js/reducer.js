@@ -69,8 +69,7 @@ function initState() {
         url: 'https://c1.staticflickr.com/6/5281/5312627175_07aeca58ea_b.jpg'
       }
     ],
-    searchText: '',
-    nextId: 11
+    searchText: ''
   };
 }
 
@@ -82,8 +81,7 @@ function rootReducer(
     case ADD_PRODUCT:
       return {
         ...state,
-        products: [...state.products, { ...action.product, id: state.nextId }],
-        nextId: state.nextId + 1
+        products: [...state.products, action.product]
       };
     case REMOVE_PRODUCT:
       return {
