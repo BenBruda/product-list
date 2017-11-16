@@ -28,7 +28,7 @@ class Modal extends React.Component<Props, State> {
   onSave = () => {
     const { name, description, url } = this.state;
     const { selectedProduct, addProduct, updateProduct } = this.props;
-    if (selectedProduct.id) {
+    if (!selectedProduct.id) {
       addProduct({ name, description, url });
     } else {
       updateProduct({
