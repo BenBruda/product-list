@@ -27,13 +27,15 @@ class ProductList extends React.Component<Props> {
                     <img src={product.url} alt="" />
                   </div>
                 </div>
-                <div className="delete-button">
+                <div
+                  className="delete-button"
+                  onClick={e => {
+                    e.stopPropagation();
+                    removeProduct(product);
+                  }}
+                >
                   <img
                     className="img-delete-button"
-                    onClick={e => {
-                      e.stopPropagation();
-                      removeProduct(product);
-                    }}
                     src={require('../../imgs/recycle-bin.svg')}
                     alt="X"
                   />
