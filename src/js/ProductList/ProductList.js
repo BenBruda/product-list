@@ -18,7 +18,7 @@ class ProductList extends React.Component<Props> {
           return (
             <div
               onClick={() => selectProduct(product)}
-              className="cardWraper"
+              className="card-wraper"
               key={index}
             >
               <div className="card">
@@ -32,7 +32,7 @@ class ProductList extends React.Component<Props> {
                     className="img-delete-button"
                     onClick={e => {
                       e.stopPropagation();
-                      removeProduct(product.id);
+                      removeProduct(product);
                     }}
                     src={require('../../imgs/recycle-bin.svg')}
                     alt="X"

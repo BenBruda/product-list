@@ -1,4 +1,4 @@
-.App {
+.app {
   text-align: center;
   background: #eaedf2;
 }
@@ -12,13 +12,13 @@
  color:#2B2F31;
  display: inline;
 }
-.cardWraper{
+.card-wraper{
   width:20%;
   float:left;
   margin: 30px;
 
 }
-.cardWraper:before {
+.card-wraper:before {
   padding-top: 16.25%;
   /* 16:9 ratio */
   display: block;
@@ -62,13 +62,13 @@ padding: 10px;
     margin-left: auto;
 }
 .modal-wrap {
-   display: block!important;
+    display: block!important;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1005;
+    z-index: 1;
     display: none;
     background-color: hsla(0, 0%, 4%, .45);
     overflow-y: scroll;
@@ -109,7 +109,7 @@ padding: 10px;
   width:20px;
 }
 .img-save-button {
-  width:45px;
+  width:30px;
 }
 .save-button {
  float: right;
@@ -166,7 +166,20 @@ padding: 10px;
  display: inline;
  margin-left:30px;
  font-size:26px;
- color: #20bba6;
- border: 2px solid;
- padding: 5px;
+ color:#20bba6;
+
+}
+.button {
+  border: 2px #20bba6 solid;
+  padding: 5px 12px;
+}
+
+.notification-wrap{
+  display: block!important;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 1;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.127);
 }

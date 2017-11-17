@@ -4,10 +4,11 @@ import * as React from 'react';
 import type { Product } from '../types';
 
 type Props = {
-  onClose: Function,
+  hideModal: Function,
   addProduct: Function,
   updateProduct: Function,
-  selectedProduct: Product
+  selectedProduct: Product,
+  showModal: boolean
 };
 type State = {
   name: string,
@@ -28,6 +29,7 @@ class Modal extends React.Component<Props, State> {
   onSave = () => {
     const { name, description, url } = this.state;
     const { selectedProduct, addProduct, updateProduct } = this.props;
+
     if (!selectedProduct.id) {
       addProduct({ name, description, url });
     } else {
@@ -38,15 +40,14 @@ class Modal extends React.Component<Props, State> {
         id: selectedProduct.id
       });
     }
-    this.props.onClose();
   };
 
   render() {
-    const { onClose } = this.props;
+    const hideModal = this.props.hideModal;
     return (
       <div className="modal-wrap">
         <div className="modal">
-          <div onClick={onClose} className="close-button">
+          <div onClick={hideModal} className="close-button">
             <img
               className="img-close-button"
               src={require('../../imgs/cancel-music.svg')}
@@ -81,7 +82,7 @@ class Modal extends React.Component<Props, State> {
             </div>
           </div>
           <div className="modal-footer">
-            <div className="save-button" onClick={this.onSave}>
+            <div className="save-button button" onClick={this.onSave}>
               <img
                 className="img-save-button"
                 src={require('../../imgs/checked.svg')}

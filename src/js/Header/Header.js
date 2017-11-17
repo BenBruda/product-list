@@ -3,12 +3,12 @@ import * as React from 'react';
 
 type Props = {
   search: Function,
-  onAdd: Function
+  showModal: Function
 };
 
 class Header extends React.Component<Props> {
   render() {
-    const { onAdd, search } = this.props;
+    const { showModal, search } = this.props;
     return (
       <div className="header">
         <div className="search-wrap">
@@ -19,7 +19,7 @@ class Header extends React.Component<Props> {
           />
           <input onChange={e => search(e.target.value)} className="search" />
         </div>
-        <div onClick={onAdd} className="add-product">
+        <div onClick={showModal} className="add-product button">
           <img
             className="add-icon"
             src={require('../../imgs/add.svg')}
