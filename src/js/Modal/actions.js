@@ -42,14 +42,14 @@ export const showNotification = (text: string): HideAction => {
 
 export const addProduct = (product: Product): AddProductAction => {
   return dispatch => {
-    dispatch(showNotification(`Product ${product.name} added`));
     dispatch(addProductBase(product));
+    dispatch(showNotification(`Item ${product.name} was added`));
   };
 };
 
 export const updateProduct = (product: Product): AddProductAction => {
   return dispatch => {
-    dispatch(showNotification(`Product ${product.name} updated`));
     dispatch(updateProductBase(product));
+    dispatch(showNotification(`Item ${product.name} was updated`));
   };
 };

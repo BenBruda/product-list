@@ -167,7 +167,6 @@ padding: 10px;
  margin-left:30px;
  font-size:26px;
  color:#20bba6;
-
 }
 .button {
   border: 2px #20bba6 solid;
@@ -182,4 +181,52 @@ padding: 10px;
   z-index: 1;
   display: none;
   background-color: rgba(0, 0, 0, 0.127);
+}
+.notification-body{
+  width: 350px;
+  height: 65px;
+  display:inline-flex;
+  background: white;
+  -webkit-box-shadow: 3px 3px 7px 0px rgba(50, 50, 50, 0.35);
+  -moz-box-shadow:    3px 3px 7px 0px rgba(50, 50, 50, 0.35);
+  box-shadow:         3px 3px 7px 0px rgba(50, 50, 50, 0.35);
+}
+.wrap-close-notif {
+ display: inherit;
+ position: absolute!important;
+ background: hsla(0, 0%, 0%, 0.58);
+ padding: 5px;
+ top: 0;
+ right:0
+
+}
+.img-close-notif {
+  height:20px;
+}
+.wrap-close-notif:hover{
+  background: hsla(0, 96%, 48%, 0.58);
+}
+.notification-text{
+  padding:10px;
+  font-size:20px;
+  color:#20bba6;
+  font-weight: bold;
+}
+
+.notification-enter {
+  opacity: 0.01;
+}
+
+.notification-enter.notification-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.notification-leave {
+  opacity: 1;
+}
+
+.notification-leave.notification-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

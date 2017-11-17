@@ -27,7 +27,7 @@ export const selectProduct = (product: Product): SelectProductAction => {
 
 export const removeProduct = (product: Product): RemoveProductAction => {
   return dispatch => {
-    dispatch(showNotification(`Product ${product.name} added`));
     dispatch(removeProductBase(product.id));
+    dispatch(showNotification(`Item ${product.name} was removed`));
   };
 };

@@ -1,5 +1,7 @@
 // @flow
 import * as React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import '../../css/App.css';
 
 import ProductList from '../ProductList';
@@ -14,12 +16,22 @@ type Props = {
 
 function App(props: Props) {
   const { showModal, showNotification } = props;
+  const notification = (
+    <ReactCSSTransitionGroup
+      transitionName="notification"
+      transitionEnterTimeout={500}
+      transitionLeaveTimeout={300}
+    >
+      {showNotification && <Notification />}
+    </ReactCSSTransitionGroup>
+  );
+  const modal = showModal && <Modal />;
   return (
     <div className="app">
       <Header />
       <ProductList />
-      {showModal && <Modal />}
-      {showNotification && <Notification />}
+      {modal}
+      {notification}
     </div>
   );
 }
