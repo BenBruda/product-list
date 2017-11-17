@@ -13,14 +13,14 @@ export const HIDE_MODAL = 'HIDE_MODAL';
 
 export const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION';
 
-export const updateProductBase = (product: Product): UpdateProductAction => {
+export const updateProduct = (product: Product): UpdateProductAction => {
   return {
     type: UPDATE_PRODUCT,
     product
   };
 };
 
-export const addProductBase = (product: Product): AddProductAction => {
+export const addProduct = (product: Product): AddProductAction => {
   return {
     type: ADD_PRODUCT,
     product: { ...product, id: cuid() }
@@ -37,19 +37,5 @@ export const showNotification = (text: string): HideAction => {
   return {
     type: SHOW_NOTIFICATION,
     text
-  };
-};
-
-export const addProduct = (product: Product): AddProductAction => {
-  return dispatch => {
-    dispatch(addProductBase(product));
-    dispatch(showNotification(`Item ${product.name} was added`));
-  };
-};
-
-export const updateProduct = (product: Product): AddProductAction => {
-  return dispatch => {
-    dispatch(updateProductBase(product));
-    dispatch(showNotification(`Item ${product.name} was updated`));
   };
 };
