@@ -11,8 +11,8 @@ function initState() {
   return {
     products: INITIAL_PRODUCTS,
     searchText: '',
-    showModal: false,
-    showNotification: false,
+    isShowingModal: false,
+    isShowingNotification: false,
     notificationText: '',
     selectedProduct: {}
   };
@@ -27,15 +27,15 @@ function rootReducer(
       return {
         ...state,
         selectedProduct: {},
-        showModal: false,
-        showNotification: true,
+        isShowingModal: false,
+        isShowingNotification: true,
         notificationText: `Item ${action.product.name} was added`,
         products: [...state.products, action.product]
       };
     case REMOVE_PRODUCT:
       return {
         ...state,
-        showNotification: true,
+        isShowingNotification: true,
         notificationText: `Item ${action.product.name} was deleted`,
         products: state.products.filter(
           product => product.id !== action.product.id
@@ -46,8 +46,8 @@ function rootReducer(
       return {
         ...state,
         selectedProduct: {},
-        showModal: false,
-        showNotification: true,
+        isShowingModal: false,
+        isShowingNotification: true,
         notificationText: `Item ${action.product.name} was updated`,
         products: state.products.map(
           product =>
@@ -62,24 +62,24 @@ function rootReducer(
     case SELECT_PRODUCT:
       return {
         ...state,
-        showModal: true,
+        isShowingModal: true,
         selectedProduct: action.product
       };
     case SHOW_MODAL:
       return {
         ...state,
-        showModal: true
+        isShowingModal: true
       };
     case HIDE_MODAL:
       return {
         ...state,
-        showModal: false,
+        isShowingModal: false,
         selectedProduct: {}
       };
     case HIDE_NOTIFICATION:
       return {
         ...state,
-        showNotification: false
+        isShowingNotification: false
       };
     default:
       return state;
@@ -100,5 +100,13 @@ export const getSearchedProducts = (state: StoreState): Array<Product> => {
 
   return searchedProducts;
 };
+
+
+
+export const getIsShowingModal = (state: StoreState): string =>  state.isShowingModal;
+export const getIsShowingNotification = (state: StoreState): string =>  state.isShowingNotification;
+
+export const getNotificationText = (state: StoreState): string =>  state.notificationText;
+export const getSelectedProduct = (state: StoreState): string =>  state.selectedProduct;
 
 export default rootReducer;

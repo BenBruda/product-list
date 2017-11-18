@@ -10,22 +10,22 @@ import Notification from '../Notification';
 import Header from '../Header';
 
 type Props = {
-  showModal: boolean,
-  showNotification: boolean
+  isShowingModal: boolean,
+  isShowingNotification: boolean
 };
 
 function App(props: Props) {
-  const { showModal, showNotification } = props;
+  const { isShowingModal, isShowingNotification } = props;
   const notification = (
     <ReactCSSTransitionGroup
       transitionName="notification"
       transitionEnterTimeout={500}
       transitionLeaveTimeout={300}
     >
-      {showNotification && <Notification />}
+      {isShowingNotification && <Notification />}
     </ReactCSSTransitionGroup>
   );
-  const modal = showModal && <Modal />;
+  const modal = isShowingModal && <Modal />;
   return (
     <div className="app">
       <Header />
