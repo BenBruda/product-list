@@ -59,6 +59,7 @@ class Modal extends React.Component<Props, State> {
               <input
                 type="text"
                 className="name"
+                maxLength="23"
                 placeholder="type a name"
                 value={this.state.name}
                 onChange={e => this.setState({ name: e.target.value })}

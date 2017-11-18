@@ -41,7 +41,9 @@ const ProductList = (props: Props) => {
               </div>
               <div className="desc-wrap">
                 <h3>{product.name} </h3>
-                <span>{product.description} </span>
+                <div className="scrollbarsContainer">
+                  <p>{product.description}</p>
+                </div>
               </div>
             </div>
           </div>
