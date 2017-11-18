@@ -1,6 +1,6 @@
 // @flow
 
-import type SearchProductAction from '../types';
+import type { SearchProductAction, ShowModalAction } from '../types';
 
 export const SEARCH_PRODUCT = 'SEARCH_PRODUCT';
 export const SHOW_MODAL = 'SHOW_MODAL';
@@ -12,7 +12,7 @@ export const search = (text: string): SearchProductAction => {
   };
 };
 
-export const showModal = (): SearchProductAction => {
+export const showModal = (): ShowModalAction => {
   return {
     type: SHOW_MODAL
   };

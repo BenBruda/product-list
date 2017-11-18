@@ -4,6 +4,15 @@ export type Product = {
   description: string
 };
 
+export type StoreState = {
+  +products: Array<{
+    +id: number,
+    +name: string,
+    +description: string
+  }>
+};
+
+
 export type AddProductAction = {
   type: 'ADD_PRODUCT',
   product: Product
@@ -18,13 +27,18 @@ export type SearchProductAction = {
   type: 'ADD_PRODUCT',
   text: string
 };
+};
 
-export type StoreState = {
-  +products: Array<{
-    +id: number,
-    +name: string,
-    +description: string
-  }>
+export type ShowModalAction = {
+  type: 'SHOW_MODAL'
+};
+
+export type HideModalAction = {
+  type: 'HIDE_MODAL'
+};
+
+export type HideNotificationAction = {
+  type: 'HIDE_NOTIFICATION'
 };
 
 export type RemoveProductAction = { type: 'REMOVE_PRODUCT', id: number };
@@ -33,4 +47,7 @@ export type Action =
   | AddProductAction
   | RemoveProductAction
   | SearchProductAction
-  | UpdateProductAction;
+  | UpdateProductAction
+  | ShowModalAction
+  | HideModalAction
+  | HideNotificationAction;

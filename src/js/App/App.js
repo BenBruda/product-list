@@ -14,7 +14,7 @@ type Props = {
   isShowingNotification: boolean
 };
 
-function App(props: Props) {
+const App = (props: Props) => {
   const { isShowingModal, isShowingNotification } = props;
   const notification = (
     <ReactCSSTransitionGroup

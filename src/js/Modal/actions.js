@@ -4,21 +4,13 @@ import type {
   Product,
   AddProductAction,
   UpdateProductAction,
-  HideAction
+  HideModalAction
 } from '../types';
 import cuid from 'cuid';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 export const HIDE_MODAL = 'HIDE_MODAL';
 
-export const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION';
-
-export const updateProduct = (product: Product): UpdateProductAction => {
-  return {
-    type: UPDATE_PRODUCT,
-    product
-  };
-};
 
 export const addProduct = (product: Product): AddProductAction => {
   return {
@@ -27,15 +19,15 @@ export const addProduct = (product: Product): AddProductAction => {
   };
 };
 
-export const hideModal = (): HideAction => {
+export const updateProduct = (product: Product): UpdateProductAction => {
   return {
-    type: HIDE_MODAL
+    type: UPDATE_PRODUCT,
+    product
   };
 };
 
-export const showNotification = (text: string): HideAction => {
+export const hideModal = (): HideModalAction => {
   return {
-    type: SHOW_NOTIFICATION,
-    text
+    type: HIDE_MODAL
   };
 };

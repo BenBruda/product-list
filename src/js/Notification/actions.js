@@ -1,11 +1,10 @@
 // @flow
 
-import type { HideAction } from '../types';
+import type { HideNotificationAction } from '../types';
 
 export const HIDE_NOTIFICATION = 'HIDE_NOTIFICATION';
-export const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION';
 
-export const hideNotification = (): HideAction => {
+export const hideNotification = (): HideNotificationAction => {
   return {
     type: HIDE_NOTIFICATION
   };
