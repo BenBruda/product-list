@@ -1,8 +1,8 @@
-import { hideNotification } from  './actions'
+import { hideNotification } from './actions';
 
-describe('Action creators',()=>{
+describe('Action creators', () => {
   it('hideNotification', () => {
-    const hideNotificationAction = hideNotification()
-    expect(hideNotificationAction).toEqual({type:"HIDE_NOTIFICATION"})
+    const hideNotificationAction = hideNotification();
+    expect(hideNotificationAction).toEqual({ type: 'HIDE_NOTIFICATION' });
   });
 });
