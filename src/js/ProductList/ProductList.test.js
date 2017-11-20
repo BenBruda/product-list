@@ -5,6 +5,7 @@ import configureStore from 'redux-mock-store';
 
 import ConnectedProductList from './index';
 import ProductList from './ProductList';
+import Card from './Card';
 import { selectProduct } from './actions';
 import { INITIAL_PRODUCTS } from '../constants';
 
@@ -39,7 +40,7 @@ describe('ConnectedProductList', () => {
     expect(action[0].type).toBe('SELECT_PRODUCT');
   });
   it('renders a card for each product in list', () => {
-    //   const notificationSpan = container.find('.notification-text');
-    //   expect(notificationSpan).toEqual(initialState.notificationText);
+    const cards = container.find(Card);
+    expect(cards.length).toEqual(INITIAL_PRODUCTS.length);
   });
 });

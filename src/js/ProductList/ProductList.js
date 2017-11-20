@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-
+import Card from './Card';
 import type {
   Product,
   RemoveProductAction,
@@ -19,38 +19,12 @@ const ProductList = (props: Props) => {
     <div className="card-list">
       {props.products.map((product, index) => {
         return (
-          <div
-            onClick={() => selectProduct(product)}
-            className="card-wrapper"
+          <Card
             key={index}
-          >
-            <div className="card">
-              <div className="img-wrap">
-                <div className="img-inner">
-                  <img src={product.url} alt="" />
-                </div>
-              </div>
-              <div
-                className="delete-button"
-                onClick={e => {
-                  e.stopPropagation();
-                  removeProduct(product);
-                }}
-              >
-                <img
-                  className="img-delete-button"
-                  src={require('../../imgs/recycle-bin.svg')}
-                  alt="X"
-                />
-              </div>
-              <div className="desc-wrap">
-                <h3>{product.name} </h3>
-                <div className="scrollbarsContainer">
-                  <p>{product.description}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+            product={product}
+            selectProduct={selectProduct}
+            removeProduct={removeProduct}
+          />
         );
       })}
     </div>
