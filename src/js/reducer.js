@@ -7,7 +7,7 @@ import { HIDE_NOTIFICATION } from './Notification/actions.js';
 import { INITIAL_PRODUCTS } from './constants';
 import type { StoreState, Action, Product } from './types';
 
-function initState() {
+export const initState = () => {
   return {
     products: INITIAL_PRODUCTS,
     searchText: '',
@@ -16,12 +16,12 @@ function initState() {
     notificationText: '',
     selectedProduct: {}
   };
-}
+};
 
-function rootReducer(
+const rootReducer = (
   state: StoreState = initState(),
   action: Action
-): StoreState {
+): StoreState => {
   switch (action.type) {
     case ADD_PRODUCT:
       return {
@@ -84,7 +84,7 @@ function rootReducer(
     default:
       return state;
   }
-}
+};
 
 export const getSearchedProducts = (state: StoreState): Array<Product> => {
   const { products, searchText } = state;
@@ -101,12 +101,13 @@ export const getSearchedProducts = (state: StoreState): Array<Product> => {
   return searchedProducts;
 };
 
-
-
-export const getIsShowingModal = (state: StoreState): string =>  state.isShowingModal;
-export const getIsShowingNotification = (state: StoreState): string =>  state.isShowingNotification;
-
-export const getNotificationText = (state: StoreState): string =>  state.notificationText;
-export const getSelectedProduct = (state: StoreState): string =>  state.selectedProduct;
+export const getIsShowingModal = (state: StoreState): string =>
+  state.isShowingModal;
+export const getIsShowingNotification = (state: StoreState): string =>
+  state.isShowingNotification;
+export const getNotificationText = (state: StoreState): string =>
+  state.notificationText;
+export const getSelectedProduct = (state: StoreState): string =>
+  state.selectedProduct;
 
 export default rootReducer;
