@@ -13,12 +13,12 @@ describe('ConnectedNotification', () => {
   const initialState = {
     products:[],
     searchText: '',
-    notificationText: '',
+    notificationText: 'here we go',
     selectedProduct: {},
     isShowingModal: false,
     isShowingNotification: false
   }
-  const mockStore = configureStore()
+  const mockStore = configureStore();
   let store,container
 
   beforeEach(()=>{
@@ -27,29 +27,18 @@ describe('ConnectedNotification', () => {
   })
   it('renders the Notification unconnected', () => {
     const notification = container.find(Notification)
-    expect(notification.length).toEqual(1)
+    expect(notification.length).toEqual(1);
   });
   it('dispatches hideNotification', () => {
     let action
     store.dispatch(hideNotification())
-    action = store.getActions()
-    expect(action[0].type).toBe("HIDE_NOTIFICATION")
-
+    action = store.getActions();
+    expect(action[0].type).toBe("HIDE_NOTIFICATION");
   });
-  // it('search input renders', () => {
-  //     const searchInput = container.find('input.search')
-
-  //     expect(searchInput.length).toEqual(1)
-  // })
-  // it('onChange search input calls search action with value', () => {
-  //     let action
-  //     const searchInput = container.find('input.search')
-  //     searchInput.instance().value='test'
-  //     searchInput.simulate('change')
-  //     action = store.getActions()
-  //     expect(action[0].type).toBe("SEARCH_PRODUCT")
-  //     expect(action[0].text).toBe("test")
-  // })
+  it('displays the notification text', () => {
+      const notificationSpan = container.find('span.notification-text');
+      expect(notificationSpan.text()).toEqual(initialState.notificationText);
+  })
   // it('when .add-product clicked showModal is called', () => {
   //     let action
   //     const newProductButton = container.find('.add-product')
