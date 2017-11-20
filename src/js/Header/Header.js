@@ -19,16 +19,11 @@ const Header = (props: Props) => {
         <input onChange={e => search(e.target.value)} className="search" />
       </div>
       <div onClick={showModal} className="add-product button">
-        <img
-          className="add-icon"
-          src={require('../../imgs/add.svg')}
-          alt="X"
-        />
+        <img className="add-icon" src={require('../../imgs/add.svg')} alt="X" />
         <span>New product </span>
       </div>
     </div>
   );
-
-}
+};
 
 export default Header;
