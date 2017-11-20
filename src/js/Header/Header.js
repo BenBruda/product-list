@@ -1,9 +1,10 @@
 // @flow
 import * as React from 'react';
+import type { ShowModalAction, SearchProductAction } from '../types';
 
 type Props = {
-  search: Function,
-  showModal: Function
+  search: (text: string) => SearchProductAction,
+  showModal: () => ShowModalAction
 };
 
 const Header = (props: Props) => {

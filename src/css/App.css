@@ -12,13 +12,13 @@
  color:#2B2F31;
  display: inline;
 }
-.card-wraper{
+.card-wrapper{
   width: 250px;
   float: left;
   margin: 2%;
 
 }
-.card-wraper:before {
+.card-wrapper:before {
   padding-top: 16.25%;
   display: block;
   content: '';

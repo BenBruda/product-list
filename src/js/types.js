@@ -12,7 +12,6 @@ export type StoreState = {
   }>
 };
 
-
 export type AddProductAction = {
   type: 'ADD_PRODUCT',
   product: Product
@@ -27,7 +26,6 @@ export type SearchProductAction = {
   type: 'ADD_PRODUCT',
   text: string
 };
-};
 
 export type ShowModalAction = {
   type: 'SHOW_MODAL'
@@ -41,6 +39,10 @@ export type HideNotificationAction = {
   type: 'HIDE_NOTIFICATION'
 };
 
+export type SelectProductAction = {
+  type: 'SELECT_PRODUCT'
+};
+
 export type RemoveProductAction = { type: 'REMOVE_PRODUCT', id: number };
 
 export type Action =
@@ -50,4 +52,5 @@ export type Action =
   | UpdateProductAction
   | ShowModalAction
   | HideModalAction
-  | HideNotificationAction;
+  | HideNotificationAction
+  | SelectProductAction;

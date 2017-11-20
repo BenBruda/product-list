@@ -34,6 +34,6 @@ const App = (props: Props) => {
       {notification}
     </div>
   );
-}
+};
 
 export default App;

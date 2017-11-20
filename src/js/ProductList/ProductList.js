@@ -1,12 +1,16 @@
 // @flow
 import * as React from 'react';
 
-import type { Product } from '../types';
+import type {
+  Product,
+  RemoveProductAction,
+  SelectProductAction
+} from '../types';
 
 type Props = {
   products: Array<Product>,
-  removeProduct: Function,
-  selectProduct: Function
+  removeProduct: (product: Product) => RemoveProductAction,
+  selectProduct: (product: Product) => SelectProductAction
 };
 
 const ProductList = (props: Props) => {
@@ -17,7 +21,7 @@ const ProductList = (props: Props) => {
         return (
           <div
             onClick={() => selectProduct(product)}
-            className="card-wraper"
+            className="card-wrapper"
             key={index}
           >
             <div className="card">
@@ -50,7 +54,7 @@ const ProductList = (props: Props) => {
         );
       })}
     </div>
-  )
-}
+  );
+};
 
 export default ProductList;

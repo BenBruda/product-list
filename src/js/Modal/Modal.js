@@ -1,12 +1,17 @@
 // @flow
 import * as React from 'react';
 
-import type { Product } from '../types';
+import type {
+  Product,
+  AddProductAction,
+  HideNotificationAction,
+  UpdateProductAction
+} from '../types';
 
 type Props = {
-  hideModal: Function,
-  addProduct: Function,
-  updateProduct: Function,
+  hideModal: () => HideNotificationAction,
+  addProduct: (product: Product) => AddProductAction,
+  updateProduct: (product: Product) => UpdateProductAction,
   selectedProduct: Product,
   showModal: boolean
 };
@@ -21,9 +26,9 @@ class Modal extends React.Component<Props, State> {
     super(props);
     const { name, description, url } = props.selectedProduct;
     this.state = {
-      name: name ? name : '',
-      description: description ? description : '',
-      url: url ? url : ''
+      name: name,
+      description: description,
+      url: url
     };
   }
   onSave = () => {

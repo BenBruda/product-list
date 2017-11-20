@@ -1,9 +1,10 @@
 // @flow
 import * as React from 'react';
+import type { HideNotificationAction } from '../types';
 
 type Props = {
   notificationText: string,
-  hideNotification: Function
+  hideNotification: () => HideNotificationAction
 };
 type State = {};
 
