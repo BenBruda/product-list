@@ -5,14 +5,14 @@
 }
 .add-icon {
   width: 20px;
-  padding:0 5px
+  padding: 0 5px;
 }
 .add-product {
   position: relative;
   display: inline;
-  margin-left:30px;
-  font-size:26px;
-  color:#20bba6;
+  margin-left: 30px;
+  font-size: 26px;
+  color: #20bba6;
 }
 .button {
   border: 2px #20bba6 solid;
@@ -27,13 +27,13 @@
 .search {
   background: #eaedf2;
   height: 35px;
-  padding-left:40px;
-  width:40%; 
-  border:none;
-  margin:none;
+  padding-left: 40px;
+  width: 40%; 
+  border: none;
+  margin: none;
   outline: none;
   color: #6f7071;
-  font-size: 26px
+  font-size: 26px;
 }
 .search:focus{
   outline: none;
@@ -43,6 +43,6 @@
 .search-icon {
   width: 27px;
   position: absolute;
-  padding:5px;
-  left: 0
+  padding: 5px;
+  left: 0;
 }

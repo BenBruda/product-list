@@ -1,6 +1,6 @@
 /* product list */
 .card-list {
-  color:#2B2F31;
+  color: #2B2F31;
   display: inline;
   }
 
@@ -18,7 +18,7 @@
 .card {
   background: white;
   position: relative;
-  height: 370px
+  height: 370px;
 }
 .scrollbarsContainer {
   width: 100%;
@@ -53,7 +53,7 @@ div::-webkit-scrollbar-thumb {
   right: -50%;
   }
 .img-inner img  {
-  width:100%;
+  width: 100%;
   position: relative;
   left: -50%;
 }
@@ -82,5 +82,5 @@ div::-webkit-scrollbar-thumb {
   background: hsla(0, 0%, 0%, 0.58);
   padding: 10px;
   top: 0;
-  right:0
+  right: 0;
 }
