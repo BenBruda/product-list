@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 import ConnectedModal from './index';
 import Modal from './Modal';
@@ -42,9 +42,11 @@ describe('ConnectedModal', () => {
     action = store.getActions();
     expect(action[0].type).toBe('HIDE_MODAL');
     expect(action[1].type).toBe('UPDATE_PRODUCT');
-    expect(action[1].product).toBe(updatedProduct);
+    expect(action[1].product).toEqual({ description: 'first descript' });
     expect(action[2].type).toBe('ADD_PRODUCT');
-    // expect(action[2].product).toBe(createdproduct)
+    // remove id made by CUID
+    delete action[2].product['id'];
+    expect(action[2].product).toEqual(createdproduct);
   });
   it('name, description, url inputs renders', () => {
     const nameInput = container.find('.name');
@@ -76,14 +78,37 @@ describe('ConnectedModal', () => {
       name: 'name test'
     });
   });
-  // it('when .save-button clicked onSave is called', () => {
-  //   const modal = container.find(Modal)
-  //   modal.instance().onSave = jest.fn();
-  //   // container.update();
-  // 	const saveProductButton = modal.find('.save-button');
-  //   saveProductButton.simulate('click');
+});
 
-  //   expect(modal.instance().onSave).toBeCalled()
-
-  // })
+describe('UnconnectedModal', () => {
+  it('On save calls addProduct if selectedProduct is empty', () => {
+    const addProductSpy = jest.fn();
+    const updateProductSpy = jest.fn();
+    const product = {};
+    const container = shallow(
+      <Modal
+        addProduct={addProductSpy}
+        updateProduct={updateProductSpy}
+        selectedProduct={product}
+      />
+    );
+    const saveProductButton = container.find('.save-button');
+    saveProductButton.simulate('click');
+    expect(addProductSpy).toBeCalled();
+  });
+  it('On save calls updateProduct if selectedProduct was passed', () => {
+    const addProductSpy = jest.fn();
+    const updateProductSpy = jest.fn();
+    const product = { description: 'Big house', id: '123D' };
+    const container = shallow(
+      <Modal
+        addProduct={addProductSpy}
+        updateProduct={updateProductSpy}
+        selectedProduct={product}
+      />
+    );
+    const saveProductButton = container.find('.save-button');
+    saveProductButton.simulate('click');
+    expect(updateProductSpy).toBeCalled();
+  });
 });

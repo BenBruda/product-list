@@ -40,7 +40,6 @@ describe('ConnectedHeader', () => {
     expect(action[0].text).toBe('exampl');
     expect(action[1].type).toBe('SHOW_MODAL');
   });
-
   it('when .add-product clicked showModal is called', () => {
     let action;
     const newProductButton = container.find('.add-product');

@@ -79,7 +79,7 @@ describe('ConnectedApp isShowingModal true', () => {
     expect(header.length).toEqual(0);
   });
 });
-describe('ConnectedApp isShowingNotification true', () => {
+describe('ConnectedApp isShowingNotification false', () => {
   const initialState = {
     products: [],
     searchText: '',

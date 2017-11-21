@@ -17,6 +17,7 @@ const Card = (props: Props) => {
   const { product, removeProduct, selectProduct } = props;
   const image = (
     <img
+      id="product-img"
       src={product.url ? product.url : require('./imgs/no-picture.png')}
       alt=""
     />
@@ -30,7 +31,7 @@ const Card = (props: Props) => {
         <div
           className="delete-button"
           onClick={e => {
-            e.stopPropagation();
+            e && e.stopPropagation();
             removeProduct(product);
           }}
         >
@@ -41,7 +42,7 @@ const Card = (props: Props) => {
           />
         </div>
         <div className="desc-wrap">
-          <h3>{product.name} </h3>
+          <h3>{product.name}</h3>
           <div className="scrollbarsContainer">
             <p>{product.description}</p>
           </div>

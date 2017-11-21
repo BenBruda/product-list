@@ -10,7 +10,10 @@ const Header = (props: Props) => {
   return (
     <div className="search-wrap">
       <img className="search-icon" src={require('./imgs/search.svg')} alt="X" />
-      <input onChange={e => search(e.target.value)} className="search" />
+      <input
+        onChange={(e: any): SearchProductAction => search(e.target.value)}
+        className="search"
+      />
     </div>
   );
 };

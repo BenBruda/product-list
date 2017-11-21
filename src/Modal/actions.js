@@ -11,7 +11,6 @@ export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 export const HIDE_MODAL = 'HIDE_MODAL';
 
-
 export const addProduct = (product: Product): AddProductAction => {
   return {
     type: ADD_PRODUCT,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 
@@ -41,11 +41,16 @@ describe('ConnectedNotification', () => {
     const notificationSpan = container.find('span.notification-text');
     expect(notificationSpan.text()).toEqual(initialState.notificationText);
   });
-  // it('when .add-product clicked showModal is called', () => {
-  //     let action
-  //     const newProductButton = container.find('.add-product')
-  //     newProductButton.simulate('click')
-  //     action = store.getActions()
-  //     expect(action[0].type).toBe("SHOW_MODAL")
-  // })
+});
+
+describe('UnconnectedNotification', () => {
+  it('when .wrap-close-notif clicked hideNotification is called', () => {
+    const hideNotificationSpy = jest.fn();
+    const container = shallow(
+      <Notification hideNotification={hideNotificationSpy} />
+    );
+    const hideNotificationButton = container.find('.wrap-close-notif');
+    hideNotificationButton.simulate('click');
+    expect(hideNotificationSpy).toBeCalled();
+  });
 });
