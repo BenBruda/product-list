@@ -1,8 +1,7 @@
 // @flow
 import * as React from 'react';
+import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
-import '../../css/App.css';
 
 import ProductList from '../ProductList';
 import Modal from '../Modal';

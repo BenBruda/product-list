@@ -9,11 +9,7 @@ const Header = (props: Props) => {
   const { search } = props;
   return (
     <div className="search-wrap">
-      <img
-        className="search-icon"
-        src={require('../../imgs/musica-searcher.svg')}
-        alt="X"
-      />
+      <img className="search-icon" src={require('./imgs/search.svg')} alt="X" />
       <input onChange={e => search(e.target.value)} className="search" />
     </div>
   );

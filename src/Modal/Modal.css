@@ -1,0 +1,80 @@
+.modal {
+  padding: 0;
+  border-radius: 5px;
+  overflow-y: visible;
+  display: block;
+  border: 0;
+  width: 600px;
+  max-width: 75rem;
+  height:500px;
+  background: white;
+  position: relative;
+  top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.modal-wrap {
+  display: block!important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background-color: hsla(0, 0%, 4%, .45);
+  overflow-y: scroll;
+}
+.close-button {
+  border: 0;
+  background: transparent;
+  margin: 10px -40px 0 0;
+  float: right;
+  color: white;
+}
+.modal-content{
+  padding:40px;
+  min-height: 330px;
+}
+.modal-footer{
+  padding:0 40px;
+}
+.description {
+  width:100%;
+  height:200px
+}
+.fildset {
+  padding:10px 0px;
+}
+.name {
+  width: 40%;
+  font-size: 16px;
+  padding: 5px;
+}
+.url {
+  width: 40%;
+  font-size: 16px;
+  padding: 5px;
+  float:left
+}
+.img-close-button {
+  width:20px;
+}
+.img-save-button {
+  width:30px;
+}
+.save-button {
+  float: right;
+}
+::-webkit-input-placeholder {
+  color: #bbbaba;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #bbbaba;;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #bbbaba;;
+}
+:-ms-input-placeholder {  
+ color: #bbbaba;;
+}

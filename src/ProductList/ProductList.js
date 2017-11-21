@@ -1,11 +1,13 @@
 // @flow
 import * as React from 'react';
-import Card from './Card';
+import './ProductList.css';
+
 import type {
   Product,
   RemoveProductAction,
   SelectProductAction
 } from '../types';
+import Card from './Card';
 
 type Props = {
   products: Array<Product>,

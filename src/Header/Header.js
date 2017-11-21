@@ -1,5 +1,7 @@
 // @flow
 import * as React from 'react';
+import './Header.css';
+
 import type { ShowModalAction, SearchProductAction } from '../types';
 import Search from './Search';
 
@@ -14,7 +16,7 @@ const Header = (props: Props) => {
     <div className="header">
       <Search search={search} />
       <div onClick={showModal} className="add-product button">
-        <img className="add-icon" src={require('../../imgs/add.svg')} alt="X" />
+        <img className="add-icon" src={require('./imgs/add.svg')} alt="X" />
         <span>New product </span>
       </div>
     </div>

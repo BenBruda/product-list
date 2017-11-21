@@ -1,5 +1,7 @@
 // @flow
 import * as React from 'react';
+import './Notification.css';
+
 import type { HideNotificationAction } from '../types';
 
 type Props = {
@@ -23,7 +25,7 @@ class Notification extends React.Component<Props, State> {
           <div onClick={hideNotification} className="wrap-close-notif">
             <img
               className="img-close-notif"
-              src={require('../../imgs/cancel-music.svg')}
+              src={require('../Modal/imgs/cancel.svg')}
               alt="X"
             />
           </div>

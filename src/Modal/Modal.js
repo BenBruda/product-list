@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import './Modal.css';
 
 import type {
   Product,
@@ -55,7 +56,7 @@ class Modal extends React.Component<Props, State> {
           <div onClick={hideModal} className="close-button">
             <img
               className="img-close-button"
-              src={require('../../imgs/cancel-music.svg')}
+              src={require('./imgs/cancel.svg')}
               alt="X"
             />
           </div>
@@ -65,7 +66,7 @@ class Modal extends React.Component<Props, State> {
                 type="text"
                 className="name"
                 maxLength="23"
-                placeholder="type a name"
+                placeholder="Name of item"
                 value={this.state.name}
                 onChange={e => this.setState({ name: e.target.value })}
               />
@@ -73,6 +74,7 @@ class Modal extends React.Component<Props, State> {
             <div className="fildset">
               <textarea
                 className="description"
+                placeholder="Describe your item ..."
                 type="text"
                 value={this.state.description}
                 onChange={e => this.setState({ description: e.target.value })}
@@ -82,6 +84,7 @@ class Modal extends React.Component<Props, State> {
               <input
                 type="text"
                 className="url"
+                placeholder="Link to img"
                 value={this.state.url}
                 onChange={e => this.setState({ url: e.target.value })}
               />
@@ -91,7 +94,7 @@ class Modal extends React.Component<Props, State> {
             <div className="save-button button" onClick={this.onSave}>
               <img
                 className="img-save-button"
-                src={require('../../imgs/checked.svg')}
+                src={require('./imgs/checked.svg')}
                 alt="ok"
               />
             </div>

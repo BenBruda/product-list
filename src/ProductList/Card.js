@@ -15,13 +15,17 @@ type Props = {
 
 const Card = (props: Props) => {
   const { product, removeProduct, selectProduct } = props;
+  const image = (
+    <img
+      src={product.url ? product.url : require('./imgs/no-picture.png')}
+      alt=""
+    />
+  );
   return (
     <div onClick={() => selectProduct(product)} className="card-wrapper">
       <div className="card">
         <div className="img-wrap">
-          <div className="img-inner">
-            <img src={product.url} alt="" />
-          </div>
+          <div className="img-inner">{image}</div>
         </div>
         <div
           className="delete-button"
@@ -32,7 +36,7 @@ const Card = (props: Props) => {
         >
           <img
             className="img-delete-button"
-            src={require('../../imgs/recycle-bin.svg')}
+            src={require('./imgs/recycle-bin.svg')}
             alt="X"
           />
         </div>
