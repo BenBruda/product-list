@@ -7,7 +7,9 @@ Displays a list of products/items. Fratures searching, adding, updating and dele
 
 ### Technologies and patterns
 
--React
--Redux with a domain driven folder structure
--Jest and Enzyme
--Flow
+
+
+- React
+- Redux with a domain driven folder structure
+- Jest and Enzyme
+- Flow
