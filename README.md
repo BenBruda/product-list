@@ -15,4 +15,4 @@ This project is a sample work representing dashboard for a marketplace. Displays
 
 ### Todo
 
-- Avoiding race conditions on notifications, by queuing notifications.
+- Avoiding race conditions on notifications, by queuing them.
