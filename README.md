@@ -2,8 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Project description
 
-This project is a sample work representing dashbord for a marketplace.
-Displays a list of products/items. Fratures searching, adding, updating and deleting items.
+This project is a sample work representing dashboard for a marketplace. Displays a list of products/items. Features searching, adding, updating and deleting items.
 
 ### Technologies and patterns
 
